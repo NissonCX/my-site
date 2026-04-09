@@ -1,0 +1,30 @@
+--- app/page.tsx
++++ app/page.tsx
+@@ -95,18 +95,5 @@
+ 
+                 {/* 社交链接 */}
+-                <div
+-                  className={`flex items-center gap-4 pt-4 opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
+-                  style={{ animationDelay: '0.7s' }}
+-                >
+-                  {socialLinks.map((link) => (
+-                    <a
+-                      key={link.name}
+-                      href={link.url}
+-                      target="_blank"
+-                      rel="noopener noreferrer"
+-                      className="text-hint hover:text-accent transition-colors duration-500"
+-                      title={link.username || link.name}
+-                    >
+-                      <SocialIcon name={link.icon} />
+-                    </a>
+-                  ))}
+-                </div>
++                <div
++                  className={`pt-4 opacity-0 ${isVisible ? 'animate-fade-in-up' : ''}`}
++                  style={{ animationDelay: '0.7s' }}
++                >
++                  <SocialLinks links={socialLinks} className="!gap-2 -ml-2" />
++                </div>
+               </div>
+             </div>

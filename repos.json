@@ -1,0 +1,29 @@
+{"description":"Let AI test your APIs — because you wrote the code, not the tests.","language":"Shell","name":"api-lazy-tester","url":"https://github.com/NissonCX/api-lazy-tester"}
+{"description":"App Store web version","language":null,"name":"apps.apple.com","url":"https://github.com/NissonCX/apps.apple.com"}
+{"description":"A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic","language":"Python","name":"awesome-claude-code","url":"https://github.com/NissonCX/awesome-claude-code"}
+{"description":"A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows","language":"Python","name":"awesome-claude-skills","url":"https://github.com/NissonCX/awesome-claude-skills"}
+{"description":"An independent Python feature port of Claude Code, entirely rewritting from scratch using oh-my-codex. Educational Purpose only.","language":null,"name":"claude-code","url":"https://github.com/NissonCX/claude-code"}
+{"description":null,"language":null,"name":"claude-code-sourcemap","url":"https://github.com/NissonCX/claude-code-sourcemap"}
+{"description":"Cool! But still in progress.","language":null,"name":"CommitCraft","url":"https://github.com/NissonCX/CommitCraft"}
+{"description":"重庆大学计算机网络试卷与复习资料","language":null,"name":"CQU-CS-Network-References","url":"https://github.com/NissonCX/CQU-CS-Network-References"}
+{"description":"C++ PTA 题库 | 重庆大学计算机学院专业能力测试部分题目解答 | 代码稚嫩，仅供参考 | 逐步更新中","language":"C++","name":"CQU-CS-Professional-Test","url":"https://github.com/NissonCX/CQU-CS-Professional-Test"}
+{"description":"重庆大学计算机学院移动应用开发期末项目（自选题）","language":"TypeScript","name":"CQU-HarmonyOS-APP-Dev-Final","url":"https://github.com/NissonCX/CQU-HarmonyOS-APP-Dev-Final"}
+{"description":"重庆大学鸿蒙移动应用开发课程作业(杨瑞龙)","language":"TypeScript","name":"CQU-HarmonyOS-AppDev-Course-Exp","url":"https://github.com/NissonCX/CQU-HarmonyOS-AppDev-Course-Exp"}
+{"description":"重庆大学计算机学院“大数据课程群”实验及PPT","language":null,"name":"CQU_bigdata","url":"https://github.com/NissonCX/CQU_bigdata"}
+{"description":"An intricate, Death Stranding-inspired aesthetic visualization generator for your GitHub Profile README. 📦🌧️","language":"TypeScript","name":"death-stranding-profile","url":"https://github.com/NissonCX/death-stranding-profile"}
+{"description":"Death Stranding UI made in React","language":null,"name":"death-stranding-ui","url":"https://github.com/NissonCX/death-stranding-ui"}
+{"description":"AI 自适应教育平台，基于 LangGraph 多智能体教学、RAG 文档学习与 Next.js/FastAPI 全栈实现。","language":"Python","name":"EduGenius","url":"https://github.com/NissonCX/EduGenius"}
+{"description":"虎溪锐评平台 - 企业级本地生活服务后端系统 | 高并发秒杀 | 多级缓存 | 服务降级 | 异步消息","language":"Java","name":"huxirating-backend","url":"https://github.com/NissonCX/huxirating-backend"}
+{"description":"重庆大学计算机学院 Java 企业级应用开发选修课课程实验 - 从命令行应用到微服务架构的完整学习路径。包含 RBAC 权限系统、Vue3 前端工程、JWT + MyBatis 后端、AI 集成（LangChain4j + 通义千问）以及 Spring Cloud Alibaba 微服务架构","language":"Java","name":"Java-Course-Exp","url":"https://github.com/NissonCX/Java-Course-Exp"}
+{"description":"「Java学习+面试指南」一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 JavaGuide！","language":null,"name":"JavaGuide","url":"https://github.com/NissonCX/JavaGuide"}
+{"description":"个人主页网站 - 展示技术能力、项目作品与生活记录 | Personal website built with Next.js, TypeScript, and Tailwind CSS","language":"TypeScript","name":"my-site","url":"https://github.com/NissonCX/my-site"}
+{"description":"A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK","language":null,"name":"nanoclaw","url":"https://github.com/NissonCX/nanoclaw"}
+{"description":null,"language":null,"name":"NissonCX","url":"https://github.com/NissonCX/NissonCX"}
+{"description":null,"language":"SCSS","name":"NissonCX.github.io","url":"https://github.com/NissonCX/NissonCX.github.io"}
+{"description":"🎯 AI 驱动的招聘邮件提醒工具，自动提取面试、测评、笔试等事件并同步到 Apple Reminders。Never miss an interview again.","language":"Python","name":"offercatcher","url":"https://github.com/NissonCX/offercatcher"}
+{"description":"自学RabbitMQ资料","language":"Java","name":"RabbitMQ-Study","url":"https://github.com/NissonCX/RabbitMQ-Study"}
+{"description":"🤖 An intelligent ATS (Applicant Tracking System) powered by Spring Boot 3, 智谱AI \u0026 Milvus. Features: AI resume parsing, RAG semantic search, async pipeline, recruitment funnel analytics. | 智能招聘管理系统：AI 简历解析、RAG 语义搜索、异步处理管道、招聘漏斗分析","language":"Java","name":"smart-ats","url":"https://github.com/NissonCX/smart-ats"}
+{"description":"Premium Steam-only player stats showcase site with demo mode, share cards, and Steam OpenID scaffold.","language":"TypeScript","name":"SteamScope","url":"https://github.com/NissonCX/SteamScope"}
+{"description":"Ultralytics YOLO 🚀","language":null,"name":"ultralytics","url":"https://github.com/NissonCX/ultralytics"}
+{"description":"一个名为“全能家庭管家 (Universal Home Oracle)”的多智能体协作系统。","language":"Python","name":"Universal-Home-Oracle","url":"https://github.com/NissonCX/Universal-Home-Oracle"}
+{"description":"Visual Studio Code","language":null,"name":"vscode","url":"https://github.com/NissonCX/vscode"}
