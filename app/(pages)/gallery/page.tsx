@@ -99,29 +99,6 @@ export default function GalleryPage() {
               />
             </div>
 
-            {/* Info */}
-            <div className="mt-6 text-center">
-              <p className="font-serif text-xl text-foreground">{selectedImage.title}</p>
-              <p className="text-body-sm text-secondary mt-2">{selectedImage.description}</p>
-              <div className="flex items-center justify-center gap-4 mt-3 font-mono text-xs text-hint">
-                {selectedImage.date && (
-                  <span className="flex items-center">
-                    <svg className="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    {selectedImage.date}
-                  </span>
-                )}
-                {selectedImage.location && (
-                  <span className="flex items-center">
-                    <svg className="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    </svg>
-                    {selectedImage.location}
-                  </span>
-                )}
-              </div>
-            </div>
           </div>
         </div>
       )}

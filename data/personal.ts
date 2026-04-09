@@ -2,9 +2,9 @@ import { Personal } from '@/types';
 
 export const personal: Personal = {
   name: 'NissonCX',
-  title: 'Java 后端工程师 · AI 协作爱好者',
-  bio: '重庆大学计科大三在读，趣链科技 Java 后端开发。热衷于技术细节，喜欢把每一个技术细节发掘到极致。',
-  avatar: 'https://avatars.githubusercontent.com/u/213365928?v=4',
+  title: 'Java 后端工程师 · AI 体系探索者',
+  bio: '一个热衷于技术细节的“全干”摸鱼王。从后端架构到多智能体 Vibe Coding 协作，不仅会用 AI，还喜欢教 AI 干活。保持好奇心，继续造轮子！',
+  avatar: '/images/avatar.jpg',
   email: 'nissoncx@gmail.com',
   location: '重庆，中国',
 };

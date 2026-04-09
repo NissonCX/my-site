@@ -53,15 +53,6 @@ export function ImageModal({ src, title, description, isOpen, onClose }: ImageMo
           className="max-w-full max-h-[85vh] object-contain rounded-lg"
         />
 
-        {/* 信息 */}
-        {(title || description) && (
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
-            <h3 className="text-white font-medium text-lg">{title}</h3>
-            {description && (
-              <p className="text-white/80 text-sm mt-1">{description}</p>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );
