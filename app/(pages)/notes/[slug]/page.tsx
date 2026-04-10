@@ -1,7 +1,7 @@
-import { notes } from '@/data';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { markdownToHtml } from '@/lib/markdown';
+import { getAllNoteSlugs, getNoteBySlug } from '@/lib/notes';
 
 interface NoteDetailPageProps {
   params: Promise<{
@@ -9,9 +9,21 @@ interface NoteDetailPageProps {
   }>;
 }
 
+export function generateStaticParams() {
+  return getAllNoteSlugs().map((slug) => ({ slug }));
+}
+
 export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
   const { slug } = await params;
-  const note = notes.find((n) => n.slug === slug);
+  const decodedSlug = (() => {
+    try {
+      return decodeURIComponent(slug);
+    } catch {
+      return slug;
+    }
+  })();
+
+  const note = getNoteBySlug(decodedSlug) ?? getNoteBySlug(slug);
 
   if (!note) {
     notFound();

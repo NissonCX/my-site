@@ -1,7 +1,3 @@
-'use client';
-
-import { personal, socialLinks, latestNotes, projects, galleryImages } from '@/data';
-import { SocialLinks } from '@/components/home/SocialLinks';
 import { HeroSection } from '@/components/home/HeroSection';
 import { FeaturedProjects } from '@/components/home/FeaturedProjects';
 import { LatestNotes } from '@/components/home/LatestNotes';

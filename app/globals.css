@@ -522,6 +522,34 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.article-content table th,
+.article-content table td {
+  border: 1px solid var(--border-muted);
+  padding: 0.625rem 0.75rem;
+  vertical-align: top;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.article-content table thead th {
+  background: var(--surface-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+}
+
+.article-content table tbody tr:nth-child(even) {
+  background: var(--surface-elevated);
+}
+
 .article-content pre {
   font-family: var(--font-mono);
   font-size: 0.875rem;
@@ -536,6 +564,15 @@ body {
 .article-content code {
   font-family: var(--font-mono);
   font-size: 0.875rem;
+}
+
+.article-content pre code {
+  display: block;
+  white-space: pre;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 
 .article-content :not(pre) > code {

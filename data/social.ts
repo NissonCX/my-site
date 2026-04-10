@@ -24,4 +24,9 @@ export const socialLinks: SocialLink[] = [
     icon: 'wechat',
     username: 'NissonCX',
   },
+  {
+    name: 'LinuxDo',
+    url: 'https://linux.do',
+    icon: 'blog',
+  },
 ];

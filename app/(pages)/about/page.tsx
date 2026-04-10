@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
-import { personal, socialLinks, skills } from '@/data';
+import { personal, socialLinks, skills, workExperiences } from '@/data';
 import { SocialLinks } from "@/components/home/SocialLinks";
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: '关于我',
-  description: '了解 NissonCX 的技术方向、个人经历和联系方式',
-  keywords: ['NissonCX', 'Java 后端工程师', '重庆大学', '个人简介'],
+  description: '了解 NissonCX 的技术方向、实习经历和联系方式',
+  keywords: ['NissonCX', 'Java 后端开发', 'Agent 开发', '重庆大学', '字节跳动', '个人简介'],
 };
 
 export default function AboutPage() {
@@ -43,6 +44,16 @@ export default function AboutPage() {
             </svg>
             {personal.location}
           </p>
+
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-surface text-foreground text-xs font-mono">
+              🎓 {personal.education}
+            </p>
+            <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-xs font-mono">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              🚀 字节跳动（懂车帝）后端开发实习（即将入职）
+            </p>
+          </div>
         </div>
 
         {/* Divider */}
@@ -63,11 +74,56 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Work Experience */}
+        <div className="mb-12">
+          <h2 className="font-serif text-lg text-foreground text-center mb-6">工作经历（重点展示）</h2>
+          <div className="space-y-4">
+            {workExperiences.map((exp) => (
+              <article
+                key={exp.id}
+                className={cn(
+                  'rounded-xl border p-5',
+                  exp.featured
+                    ? 'border-accent/40 bg-accent/5 shadow-elevated'
+                    : 'border-border/40 bg-surface/60'
+                )}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-serif text-base text-foreground">
+                      {exp.company}
+                      {exp.featured && (
+                        <span className="ml-2 align-middle inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-2 py-0.5 text-[10px] font-mono text-accent">
+                          重点
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-body-sm text-secondary mt-1">{exp.role}</p>
+                  </div>
+                  <span className="font-mono text-xs text-hint">{exp.period}</span>
+                </div>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {exp.location && <span className="tag">{exp.location}</span>}
+                  {exp.status && <span className="tag">{exp.status}</span>}
+                </div>
+
+                <p className="text-body-sm text-secondary mt-3 leading-relaxed">
+                  {exp.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="divider" />
+
         {/* Interests */}
         <div className="mb-12">
           <h2 className="font-serif text-lg text-foreground text-center mb-6">兴趣爱好</h2>
           <div className="flex flex-wrap justify-center gap-2">
-            {['阅读技术书籍', '探索新技术', '摄影', '户外运动', '音乐'].map((interest) => (
+            {['巴塞罗那 / 梅西', '校园足球', 'Multi-Agent 折腾', 'LinuxDo 社区', '技术写作与分享'].map((interest) => (
               <span key={interest} className="tag">
                 {interest}
               </span>
@@ -86,15 +142,15 @@ export default function AboutPage() {
             </div>
 
           <p className="font-mono text-xs text-hint mt-4">
-            欢迎交流，期待与你联系
+            欢迎技术交流、学术探讨或内推机会
           </p>
         </div>
 
         {/* Personal Statement */}
         <div className="mt-16 text-center">
           <p className="text-body-sm text-secondary max-w-md mx-auto leading-relaxed">
-            我是一名热爱技术的 Java 后端工程师，专注于微服务架构和 AI 应用开发。
-            在工作中不断学习新技术，追求代码质量与工程效率的提升。
+            重庆大学计算机科学与技术本科在读，曾在杭州趣链科技担任 Java 后端开发实习，即将入职字节跳动（懂车帝）后端开发实习。
+            保持后端主线的同时，持续探索 Agent 开发、多智能体协作与工程效率工具。
           </p>
         </div>
       </div>

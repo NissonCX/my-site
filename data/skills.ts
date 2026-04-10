@@ -4,6 +4,7 @@ export const skills: Skill[] = [
   // 语言
   { name: 'Java', category: 'language', level: 'proficient' },
   { name: 'TypeScript', category: 'language', level: 'familiar' },
+  { name: 'Node.js', category: 'language', level: 'familiar' },
   { name: 'Python', category: 'language', level: 'familiar' },
   { name: 'SQL', category: 'language', level: 'proficient' },
 
@@ -12,7 +13,6 @@ export const skills: Skill[] = [
   { name: 'Spring Cloud Alibaba', category: 'framework', level: 'proficient' },
   { name: 'MyBatis', category: 'framework', level: 'proficient' },
   { name: 'Next.js', category: 'framework', level: 'familiar' },
-  { name: 'Vue3', category: 'framework', level: 'familiar' },
   { name: 'LangChain4j', category: 'framework', level: 'familiar' },
 
   // 数据库
@@ -25,9 +25,12 @@ export const skills: Skill[] = [
   { name: 'Docker', category: 'tool', level: 'familiar' },
   { name: 'Nacos', category: 'tool', level: 'familiar' },
   { name: 'RabbitMQ', category: 'tool', level: 'familiar' },
+  { name: 'Claude Code', category: 'tool', level: 'familiar' },
+  { name: 'OpenClaw', category: 'tool', level: 'familiar' },
 
   // 其他
-  { name: 'HarmonyOS', category: 'other', level: 'familiar' },
+  { name: 'Multi-Agent 协作', category: 'other', level: 'familiar' },
+  { name: 'AI Agent 工作流', category: 'other', level: 'familiar' },
 ];
 
 export const skillCategories = [

@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import { latestNotes } from '@/data';
 import { SectionTitle } from '@/components/layout';
 import { NoteCard } from '@/components/cards';
+import { getLatestNotes } from '@/lib/notes';
 
 export function LatestNotes() {
+  const latestNotes = getLatestNotes();
+
   return (
     <section className="py-16 md:py-24 bg-muted/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     default: "NissonCX - 个人主页",
     template: "%s | NissonCX",
   },
-  description: "重庆大学计科大三在读，趣链科技 Java 后端开发。热衷于技术细节，喜欢把每一个技术细节发掘到极致。",
-  keywords: ["Java", "Spring Boot", "后端开发", "微服务", "AI", "个人主页", "NissonCX"],
+  description: "重庆大学 CS 本科大三在读，前趣链科技 Java 后端开发实习，即将入职字节跳动（懂车帝）后端开发实习。热衷技术细节与 Agent 开发探索。",
+  keywords: ["Java", "Spring Boot", "后端开发", "Agent", "Multi-Agent", "TypeScript", "Node.js", "重庆大学", "个人主页", "NissonCX"],
   authors: [{ name: "NissonCX" }],
   openGraph: {
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: "https://caoxu.xyz",
     siteName: "NissonCX",
     title: "NissonCX - 个人主页",
-    description: "重庆大学计科大三在读，趣联科技 Java 后端开发。热衷于技术细节，喜欢把每一个技术细节发掘到极致。",
+    description: "重庆大学 CS 本科大三在读，前趣链科技 Java 后端开发实习，即将入职字节跳动（懂车帝）后端开发实习。热衷技术细节与 Agent 开发探索。",
   },
 };
 

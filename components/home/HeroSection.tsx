@@ -2,10 +2,8 @@
 
 import { useState } from 'react';
 import { personal, socialLinks } from '@/data';
-import { Button } from '@/components/ui';
 import { SocialLinks } from '@/components/home/SocialLinks';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 
 export function HeroSection() {
   const [hoverState, setHoverState] = useState<'default' | 'barca' | 'music'>('default');
@@ -46,17 +44,27 @@ export function HeroSection() {
               <span className="absolute -top-4 -right-12 text-2xl animate-[bounce_2s_infinite]">👋</span>
             </h1>
 
-            {/* 介绍段落（融合自我介绍与Vibe Coding特质） */}
+            {/* 标志性标签 */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+              <span className="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs font-mono text-foreground">
+                🎓 {personal.education}
+              </span>
+              <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-mono text-accent">
+                🚀 字节跳动（懂车帝）后端开发实习（即将入职）
+              </span>
+            </div>
+
+            {/* 介绍段落 */}
             <div className="space-y-6 text-base md:text-lg text-secondary leading-relaxed max-w-xl mx-auto md:mx-0">
               <p className="font-medium text-foreground tracking-wide">
-                重庆大学 CS 本科在读 · 趣链科技研发实习
+                重庆大学 CS 本科大三在读 · 前趣链科技 Java 后端开发实习
               </p>
               <p>
-                一个热衷于技术细节的“全干”爱好者。从深入 <b>Java微服务架构</b> 起步，到如今积极在这个多智能体 (Multi-Agent) 时代探索 <b>AI 全栈与 Vibe Coding</b>，也曾专为 OpenClaw 撰写 Skill。我喜欢享受让 AI 开始真正干活的过程。
+                虽然后端起步，但我始终是“全干”选手：主线深耕 <b>Java / Spring Boot</b>，同时持续探索 <b>Agent 开发与 Multi-Agent 协作</b>。正在系统学习 TypeScript 与 Node.js，也在持续打磨 OpenClaw 与 Claude Code 的定制 Skill。
               </p>
               <p className="flex items-center justify-center md:justify-start text-sm font-mono text-blue-500/80 dark:text-blue-400 mt-2">
                 <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse mr-2" />
-                正在寻找暑期大厂实习
+                标志性经历：即将入职字节跳动（懂车帝）后端开发实习
               </p>
             </div>
 
@@ -74,20 +82,22 @@ export function HeroSection() {
                 onMouseLeave={() => setHoverState('default')}
               >
                 <p className="font-serif text-[15px] leading-relaxed text-secondary transition-colors duration-500">
-                  偏爱巴塞罗那，坚定传控理念。<br/>是<span className={cn("transition-colors duration-500", hoverState === 'barca' ? "text-[#A50044] font-bold" : "")}>理想主义者</span>，也是殉道者。<span className={cn("transition-colors duration-500", hoverState === 'barca' ? "text-[#004D98] font-bold" : "")}>梅西</span>则是足球的本身。
+                  铁杆巴塞罗那球迷，坚定传控理念。<br />
+                  <span className={cn("transition-colors duration-500", hoverState === 'barca' ? "text-[#004D98] font-bold" : "")}>梅西</span>
+                  是足球本身。Visca Barça!
                 </p>
               </div>
 
-              {/* 音乐段落 (纵贯线) */}
+              {/* 个人信条 */}
               <div 
                 className="relative group cursor-default transition-transform duration-500"
                 onMouseEnter={() => setHoverState('music')}
                 onMouseLeave={() => setHoverState('default')}
               >
                 <p className="font-serif text-[15px] leading-relaxed text-secondary transition-colors duration-500 italic">
-                  “出发了不要管那路在哪，迎风向前是唯一的方法。”
+                  “保持热爱，折腾不止，把每一个技术细节发掘到极致！”
                   <span className={cn("block mt-2 text-xs font-sans not-italic font-medium transition-colors duration-500 uppercase tracking-widest", hoverState === 'music' ? "text-amber-500" : "text-hint")}>
-                    — 纵贯线乐队《公路》
+                    — NissonCX
                   </span>
                 </p>
               </div>

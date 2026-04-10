@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import { notes } from '@/data';
 import { NoteCard } from '@/components/cards';
+import { getAllNotes } from '@/lib/notes';
 
 export const metadata: Metadata = {
   title: '随笔文章',
@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function NotesPage() {
+  const notes = getAllNotes();
+
   return (
     <section className="py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-6 md:px-12">

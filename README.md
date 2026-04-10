@@ -119,7 +119,28 @@ export const personal: Personal = {
 
 ### 添加文章
 
-编辑 `data/notes.ts` 文件，按照现有格式添加新文章。
+方式一（推荐）：在 `content/notes/` 下新增 Markdown 文件（每篇一文件），使用 frontmatter：
+
+```md
+---
+title: "文章标题"
+slug: "article-slug"
+summary: "文章摘要"
+date: "2026-04-11"
+tags:
+  - "标签1"
+  - "标签2"
+---
+
+正文内容...
+```
+
+方式二（从外部技术笔记目录导入）：
+
+```bash
+npm run notes:sync
+npm run notes:validate
+```
 
 ### 添加图片
 

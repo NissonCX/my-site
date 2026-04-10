@@ -3,6 +3,7 @@ export interface Personal {
   name: string;
   title: string;        // 身份标签，如"Java后端工程师"
   bio: string;          // 一句话介绍
+  education: string;    // 学历信息
   avatar: string;
   email: string;
   location: string;
@@ -52,6 +53,18 @@ export interface Note {
   date: string;
   tags: string[];
   coverImage?: string;
+}
+
+// 工作经历类型
+export interface WorkExperience {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  location?: string;
+  status?: string;
+  featured?: boolean;
+  description: string;
 }
 
 // 导航类型
