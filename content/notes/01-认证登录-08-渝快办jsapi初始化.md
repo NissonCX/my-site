@@ -106,9 +106,9 @@ public Map<String, Object> getExtends() {
 ```yaml
 # application-dev.yml
 ykb:
-  appId: ca7f1cfb-e115-4f86-88d1-e4d5b937f701
-  appKey: NSoYaGNmScvXSIJ+ZahRMQ==
-  appSecretKey: 2/z!2F_7
+  appId: <YKB_APP_ID>
+  appKey: <YKB_APP_KEY>
+  appSecretKey: <YKB_APP_SECRET_KEY>
   scopes:
     - base     # 基础信息
     - user     # 用户信息

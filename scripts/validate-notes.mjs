@@ -4,9 +4,16 @@ import matter from 'gray-matter';
 
 const NOTES_DIR = path.resolve(process.cwd(), 'content/notes');
 const REQUIRED_FIELDS = ['title', 'slug', 'summary', 'date', 'tags'];
+const WECHAT_APP_ID_PATTERN = /\bwx[a-zA-Z0-9]{16}\b/g;
+const CREDENTIAL_ASSIGNMENT_PATTERN =
+  /\b(?:appId|appid|appKey|appSecret|appSecretKey|secretKey|secretId|clientSecret)\b\s*[:=]\s*["']?([A-Za-z0-9_!/+.-]{8,})["']?/gi;
 
 function isValidDate(value) {
   return typeof value === 'string' && !Number.isNaN(Date.parse(value));
+}
+
+function isPlaceholderValue(value) {
+  return /^<[^>]+>$/.test(value) || /^your[_-]/i.test(value);
 }
 
 async function main() {
@@ -24,6 +31,7 @@ async function main() {
     const raw = await fs.readFile(fullPath, 'utf8');
     const parsed = matter(raw);
     const data = parsed.data ?? {};
+    const content = parsed.content ?? '';
 
     for (const field of REQUIRED_FIELDS) {
       const value = data[field];
@@ -47,6 +55,21 @@ async function main() {
         slugToFile.set(data.slug, fileName);
       }
     }
+
+    const appIdMatches = content.match(WECHAT_APP_ID_PATTERN);
+    if (appIdMatches?.length) {
+      errors.push(`${fileName}: 检测到疑似微信 AppID，请先脱敏`);
+    }
+
+    let credentialMatch = CREDENTIAL_ASSIGNMENT_PATTERN.exec(content);
+    while (credentialMatch) {
+      const value = credentialMatch[1];
+      if (!isPlaceholderValue(value)) {
+        errors.push(`${fileName}: 检测到疑似敏感配置值未脱敏 (${credentialMatch[0].trim()})`);
+      }
+      credentialMatch = CREDENTIAL_ASSIGNMENT_PATTERN.exec(content);
+    }
+    CREDENTIAL_ASSIGNMENT_PATTERN.lastIndex = 0;
   }
 
   if (errors.length > 0) {

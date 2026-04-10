@@ -12,6 +12,29 @@ const CATEGORY_TAG_MAP = {
   '05-设计模式': '设计模式',
 };
 
+const REDACTION_RULES = [
+  {
+    regex: /(\b(?:appSecretKey)\b\s*[:=]\s*["']?)([^"'\s,\n]+)(["']?)/gi,
+    replacement: '$1<APP_SECRET_KEY>$3',
+  },
+  {
+    regex: /(\b(?:appSecret|clientSecret|secretKey|secretId)\b\s*[:=]\s*["']?)([^"'\s,\n]+)(["']?)/gi,
+    replacement: '$1<APP_SECRET>$3',
+  },
+  {
+    regex: /(\b(?:appKey)\b\s*[:=]\s*["']?)([^"'\s,\n]+)(["']?)/gi,
+    replacement: '$1<APP_KEY>$3',
+  },
+  {
+    regex: /(\b(?:appId|appid)\b\s*[:=]\s*["']?)([^"'\s,\n]+)(["']?)/gi,
+    replacement: '$1<APP_ID>$3',
+  },
+  {
+    regex: /\bwx[a-zA-Z0-9]{16}\b/g,
+    replacement: '<WECHAT_APP_ID>',
+  },
+];
+
 function parseArgs(argv) {
   const args = { source: DEFAULT_SOURCE_DIR, clean: true };
 
@@ -134,6 +157,12 @@ function normalizeBody(raw) {
   return `${withoutTopHeading}\n`;
 }
 
+function redactSensitiveLiterals(raw) {
+  return REDACTION_RULES.reduce((content, rule) => {
+    return content.replace(rule.regex, rule.replacement);
+  }, raw);
+}
+
 function buildTags(relativePath) {
   const [folder] = relativePath.split(path.sep);
   const categoryTag = CATEGORY_TAG_MAP[folder] ?? '技术笔记';
@@ -197,12 +226,13 @@ async function main() {
 
   for (const file of markdownFiles) {
     const raw = await fs.readFile(file.fullPath, 'utf8');
+    const sanitizedRaw = redactSensitiveLiterals(raw);
     const fileStat = await fs.stat(file.fullPath);
     const fallbackTitle = path.basename(file.fullPath, '.md');
-    const title = readTitle(raw, fallbackTitle);
+    const title = readTitle(sanitizedRaw, fallbackTitle);
     const fallbackDate = new Date(fileStat.mtimeMs).toISOString().slice(0, 10);
-    const date = readDate(raw, fallbackDate);
-    const summary = readSummary(raw);
+    const date = readDate(sanitizedRaw, fallbackDate);
+    const summary = readSummary(sanitizedRaw);
     const tags = buildTags(file.relativePath);
     const folder = file.relativePath.split(path.sep)[0] ?? 'note';
     const baseSlug = slugify(`${folder}-${fallbackTitle}`);
@@ -217,7 +247,7 @@ async function main() {
     });
 
     const outputPath = path.join(TARGET_DIR, `${slug}.md`);
-    const body = normalizeBody(raw);
+    const body = normalizeBody(sanitizedRaw);
     await fs.writeFile(outputPath, `${frontmatter}${body}`, 'utf8');
   }
 
